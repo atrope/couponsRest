@@ -1,2 +1,10 @@
-GET   /coupons                           controllers.CouponController.index
-GET   /coupons/:id                       controllers.CouponController.show(id: Long)
+#REST API
+GET   /coupons                rest.controllers.CouponController.index
+GET   /coupons/:id            rest.controllers.CouponController.show(id: Long)
+
+
+
+#WEB APP
+GET   /                     controllers.HomeController.index
+GET   /coupon/:id            controllers.HomeController.show(id: Long)
+GET   /assets/*file         controllers.Assets.versioned(path="/public", file: Asset)

@@ -1,0 +1,10 @@
+@(coupon: Coupon)
+<a href="/coupon/@coupon.id">
+  <div class="coupon d-inline-block col-xs-12 col-sm-3 m-sm-2 mb-2">
+    <div class="coupon__tag">✶ Coupon ✶</div>
+    <div class="coupon__body">
+      <div class="coupon__title">@coupon.name</div>
+      <div class="coupon__value"><strong>-@coupon.id%</strong></div>
+    </div>
+  </div>
+</a>

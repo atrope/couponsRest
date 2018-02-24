@@ -1,0 +1,9 @@
+@(coupons: Array[Coupon])
+@main("Welcome to Coupons!") {
+  @nav("Home")
+  <div class="container text-center">
+    @for(c <- coupons){
+      @coupon(c)
+    }
+  </div>
+}
