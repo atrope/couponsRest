@@ -1,0 +1,24 @@
+@(coupons: Array[Coupon])
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(c <- coupons){
+
+    <tr>
+      <th scope="row">@c.id</th>
+      <td>@c.name</td>
+      <td>
+        <a href ="/admin/coupons/@c.id" class="btn btn-dark btn-sm mr-1">Edit</a>
+        <a href ="#" data-id="@c.id" class="btn btn-danger btn-sm mr-1">Delete</a>
+      </td>
+    </tr>
+}
+</tbody>
+
+</table>

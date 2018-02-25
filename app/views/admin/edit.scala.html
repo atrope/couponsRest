@@ -1,0 +1,35 @@
+@(coupon: Coupon)
+
+@main("Coupon #"+coupon.id) {
+  @nav("Coupon")
+  <div class="container text-center">
+  <h1> Editing Coupoun #@coupon.id</h1>
+  <form action="/admin/coupons/edit" method="POST" id="formEdit">
+    <input type="hidden" name="id" value="@coupon.id">
+    <div class="form-group">
+      <label for="InputTitle">Title</label>
+      <input type="text" name="title" class="form-control" id="InputTitle" placeholder="Enter Title" value="@coupon.name">
+    </div>
+    <div class="form-group">
+      <label for="InputTitle">Description</label>
+      <input type="text" name="desc" class="form-control" id="InputDescription" placeholder="Enter Description" value="@coupon.desc">
+    </div>
+    <div class="form-group">
+      <label for="InputTitle">Image</label>
+      <input type="text" name="img" class="form-control" id="InputImage" placeholder="Enter Image" value="@coupon.img">
+    </div>
+    <div class="form-group">
+      <label for="InputTitle">Code</label>
+      <input type="text" name="code" class="form-control" id="InputCode" placeholder="Enter Code" value="@coupon.code">
+    </div>
+  <button type="submit" class="btn btn-primary">Edit it!</button>
+</form>
+
+
+</div>
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/swal.css")">
+<script src="@routes.Assets.versioned("javascripts/jquery.js")" type="text/javascript"></script>
+<script src="@routes.Assets.versioned("javascripts/swal.js")" type="text/javascript"></script>
+<script src="@routes.Assets.versioned("javascripts/admin.js")" type="text/javascript"></script>
+
+}

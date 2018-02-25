@@ -3,7 +3,9 @@
 @main("Coupon #"+coupon.id) {
   @nav("Coupon")
   <div class="container text-center">
-    GREAT COUPON!
-    <b>@coupon.name</b>
+    <h1>@coupon.name</h1>
+    <img src="@coupon.img"/><br>
+    @coupon.desc<br>
+    @coupon.code<br>
 </div>
 }
