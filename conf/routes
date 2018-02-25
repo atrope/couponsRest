@@ -1,14 +1,14 @@
 #REST API
 GET     /coupons                        rest.controllers.CouponController.index
-GET     /coupons/:id                    rest.controllers.CouponController.show(id: Long)
-DELETE  /coupons/:id                    rest.controllers.CouponController.delete(id: Long)
-PUT     /coupons/:id                    rest.controllers.CouponController.edit(id: Long)
+GET     /coupons/:id                    rest.controllers.CouponController.show(id: String)
+DELETE  /coupons/:id                    rest.controllers.CouponController.delete(id: String)
+PUT     /coupons/:id                    rest.controllers.CouponController.edit(id: String)
 POST    /coupons                        rest.controllers.CouponController.create()
 
 #ADMIN
 GET     /admin/coupons                  controllers.AdminController.index
 GET     /admin/coupons/create           controllers.AdminController.showcreate()
-GET     /admin/coupons/:id              controllers.AdminController.showedit(id: Long)
+GET     /admin/coupons/:id              controllers.AdminController.showedit(id: String)
 + nocsrf
 POST    /admin/coupons/delete           controllers.AdminController.delete()
 + nocsrf
@@ -19,5 +19,5 @@ POST   /admin/coupons/create            controllers.AdminController.create()
 
 #WEB APP
 GET   /                                 controllers.HomeController.index
-GET   /coupon/:id                       controllers.HomeController.show(id: Long)
+GET   /coupon/:id                       controllers.HomeController.show(id: String)
 GET   /assets/*file                     controllers.Assets.versioned(path="/public", file: Asset)

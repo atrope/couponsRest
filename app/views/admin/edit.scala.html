@@ -1,11 +1,11 @@
 @(coupon: Coupon)
 
-@main("Coupon #"+coupon.id) {
+@main("Coupon #"+coupon._id.$oid) {
   @nav("Coupon")
   <div class="container text-center">
-  <h1> Editing Coupoun #@coupon.id</h1>
+  <h1> Editing Coupoun #@coupon._id.$oid</h1>
   <form action="/admin/coupons/edit" method="POST" id="formEdit">
-    <input type="hidden" name="id" value="@coupon.id">
+    <input type="hidden" name="id" value="@coupon._id.$oid">
     <div class="form-group">
       <label for="InputTitle">Title</label>
       <input type="text" name="title" class="form-control" id="InputTitle" placeholder="Enter Title" value="@coupon.name">
@@ -17,6 +17,10 @@
     <div class="form-group">
       <label for="InputTitle">Image</label>
       <input type="text" name="img" class="form-control" id="InputImage" placeholder="Enter Image" value="@coupon.img">
+    </div>
+    <div class="form-group">
+      <label for="InputTitle">Percentage Off</label>
+      <input type="text" name="poff" class="form-control" id="InputImage" placeholder="Enter Percentage Off" value="@coupon.poff">
     </div>
     <div class="form-group">
       <label for="InputTitle">Code</label>

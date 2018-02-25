@@ -1,6 +1,6 @@
 @(coupon: Coupon)
 
-@main("Coupon #"+coupon.id) {
+@main("Coupon #"+coupon._id.$oid) {
   @nav("Coupon")
   <div class="container text-center">
     <h1>@coupon.name</h1>
