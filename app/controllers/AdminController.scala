@@ -19,8 +19,8 @@ class AdminController @Inject()(cc: ControllerComponents) extends AbstractContro
     val url = "http://localhost:9000/coupons/"+id
     val result = Http(url).asString
     val gson = new Gson
-    val coupon = gson.fromJson(result.body, classOf[Coupon])
-    Ok(views.html.admin.edit(coupon))
+    val coupon = gson.fromJson(result.body, classOf[Array[Coupon]])
+    Ok(views.html.admin.edit(coupon(0)))
   }
   def showcreate() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.admin.add())

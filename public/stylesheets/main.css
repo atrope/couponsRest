@@ -6,6 +6,9 @@
   border: 2px dashed  #fa5b7d;
   background-color: pink;
 }
+.table-striped tbody tr {
+    line-height: 75px;
+}
 .coupon .coupon__tag {
   position: absolute;
   left: -27%;

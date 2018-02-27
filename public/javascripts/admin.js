@@ -46,7 +46,8 @@ $(document).ready(function() {
                     text: "Coupon Edited!",
                     type: 'success'
                 }).then((result) => {
-                    window.history.back();
+                  window.location="/admin/coupons";
+
                 });
             })
             .fail(function(xhr, status, error) {
@@ -55,7 +56,8 @@ $(document).ready(function() {
                     text: "Something went wrong!",
                     type: 'error'
                 }).then((result) => {
-                    window.history.back();
+                  window.location="/admin/coupons";
+
                 });
             });
     });
@@ -71,7 +73,8 @@ $(document).ready(function() {
                     text: "Coupon Created!",
                     type: 'success'
                 }).then((result) => {
-                    window.history.back();
+                  window.location="/admin/coupons";
+
                 });
             })
             .fail(function(xhr, status, error) {
@@ -80,7 +83,8 @@ $(document).ready(function() {
                     text: "Something went wrong!",
                     type: 'error'
                 }).then((result) => {
-                    window.history.back();
+                  window.location="/admin/coupons";
+
                 });
             });
     });

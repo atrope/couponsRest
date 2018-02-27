@@ -3,7 +3,9 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Image</th>
       <th scope="col">Name</th>
+      <th scope="col">Percentage Off</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -12,7 +14,9 @@
 
     <tr>
       <th scope="row">@c._id.$oid</th>
+      <td><img src ="@c.img" width="50" height="50"/></td>
       <td>@c.name</td>
+      <td>@c.poff%</td>
       <td>
         <a href ="/admin/coupons/@c._id.$oid" class="btn btn-dark btn-sm mr-1">Edit</a>
         <a href ="#" data-id="@c._id.$oid" class="btn btn-danger btn-sm mr-1">Delete</a>
