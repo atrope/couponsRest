@@ -18,15 +18,13 @@ trait Mongo {
 
 class MongoRepo(reactiveMongoApi: ReactiveMongoApi) extends Mongo {
   protected def collection = reactiveMongoApi.db.collection[JSONCollection]("coupons")
-  def find()(implicit ec: ExecutionContext): Future[List[JsObject]] = collection.find(Json.obj()).cursor[JsObject](ReadPreference.Primary).collect[List]()
+  def find()(implicit ec: ExecutionContext): Future[List[JsObject]] =c ollection.find(Json.obj()).cursor[JsObject](ReadPreference.Primary).collect[List]()
 
-  def findOne(id: String)(implicit ec: ExecutionContext): Future[List[JsObject]] =
-     collection.find(Json.obj("_id" -> Json.obj("$oid" -> id))).cursor[JsObject](ReadPreference.Primary).collect[List]()
+  def findOne(id: String)(implicit ec: ExecutionContext): Future[List[JsObject]] = collection.find(Json.obj("_id" -> Json.obj("$oid" -> id))).cursor[JsObject](ReadPreference.Primary).collect[List]()
 
   def update(id: String, update: JsObject)(implicit ec: ExecutionContext): Future[WriteResult] = collection.update(Json.obj("_id" -> Json.obj("$oid" -> id)), update)
 
   def remove(id:String)(implicit ec: ExecutionContext): Future[WriteResult] = collection.remove(Json.obj("_id" -> Json.obj("$oid" -> id)))
 
-  def save(document: JsObject)(implicit ec: ExecutionContext): Future[WriteResult] =
-    collection.insert(document)
+  def save(document: JsObject)(implicit ec: ExecutionContext): Future[WriteResult] = collection.insert(document)
 }
