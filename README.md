@@ -1,5 +1,8 @@
 # couponsRest
-http://54.236.22.144:9000/  https://github.com/atrope/couponsRest
+http://54.236.22.144:9000/  
+
+
+https://github.com/atrope/couponsRest
 
 The code is made so that all 3 "modules" could be deployed as a standalone app by itself
 
