@@ -10,17 +10,18 @@ case class Coupon(name: String,desc :String, _id: CouponId,img:String,code:Strin
 case class CouponId($oid: String)
 @Singleton
 class HomeController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
+  private val URL =  "http://localhost:9000/coupons/"
+  private val gson = new Gson
+
   def index() = Action { implicit request: Request[AnyContent] =>
-    val url = "http://localhost:9000/coupons"
-    val result = Http(url).asString
-    val gson = new Gson
-    val coupons = gson.fromJson(result.body, classOf[Array[Coupon]])
+    val result = Http(URL).asString
+    val coupons =
+
+
     Ok(views.html.index(coupons))
   }
   def show(id:String) = Action { implicit request: Request[AnyContent] =>
-    val url = "http://localhost:9000/coupons/"+id
-    val result = Http(url).asString
-    val gson = new Gson
+    val result = Http(URL+id).asString
     val coupon = gson.fromJson(result.body, classOf[Array[Coupon]])
     Ok(views.html.promo(coupon(0)))
   }

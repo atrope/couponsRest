@@ -18,7 +18,7 @@ trait Mongo {
 
 class MongoRepo(reactiveMongoApi: ReactiveMongoApi) extends Mongo {
   protected def collection = reactiveMongoApi.db.collection[JSONCollection]("coupons")
-  def find()(implicit ec: ExecutionContext): Future[List[JsObject]] =c ollection.find(Json.obj()).cursor[JsObject](ReadPreference.Primary).collect[List]()
+  def find()(implicit ec: ExecutionContext): Future[List[JsObject]] =collection.find(Json.obj()).cursor[JsObject](ReadPreference.Primary).collect[List]()
 
   def findOne(id: String)(implicit ec: ExecutionContext): Future[List[JsObject]] = collection.find(Json.obj("_id" -> Json.obj("$oid" -> id))).cursor[JsObject](ReadPreference.Primary).collect[List]()
 
